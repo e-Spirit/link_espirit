@@ -1,0 +1,26 @@
+<iscomment>e-Spirit | demo template to for mixed content/product pages</iscomment>
+
+<div class="product-tile" style="height: 234px;">
+	<div class="product-image"><!-- dwMarker="product" dwContentID="bcD8Yiaag1YEcaaac9jiBMb6Ik" -->
+			<a class="thumb-link" href="${URLUtils.http('Product-Show','pid', pdict.Product.ID)}" title="${pdict.Product.name}">
+				<img src="${pdict.Product.getImage('medium',0).getURL()}" alt="${pdict.Product.name}"/>
+			</a>
+	</div>
+	<div class="product-name">
+		<h2>
+			<a class="name-link" href="${URLUtils.http('Product-Show','pid', pdict.Product.ID)}" title="${pdict.Product.name}">
+				<isif condition="${pdict.FS_Name.equals("NULL")}"> 
+					<isprint value="${pdict.Product.name}"/>	
+				<iselse>
+					<isprint value="${pdict.FS_Name}"/>
+				</isif>
+			</a>
+		</h2>
+	</div>
+	<div class="product-pricing">
+		<span class="product-sales-price" title="Sale Price">
+			<isset name="showTieredPrice" value="${true}" scope="page"/>
+			<isinclude template="product/components/pricing"/>
+		</span>
+	</div>
+</div> 
