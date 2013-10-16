@@ -1,0 +1,33 @@
+<certification>
+	<cartridgeInfo>
+		<name>First Spirit</name>
+		<version>1.0.0</version>
+		<implementer>First Spirit</implementer>
+	</cartridgeInfo>
+	<certificationInfo>
+		<certificationID>149</certificationID>
+		<certifiedby>
+			Brian LeBlanc
+		</certifiedby>
+		<date>
+			10/16/2013
+		</date>
+		<platform>
+			<version>13.5</version>
+			<storefront>13.5</storefront>
+		</platform>
+		<usecases>
+			<usecase>
+				<description>
+					Update a Content Asset
+				</description>
+				<steps>
+					1.  Use First Spirit to modify a content asset.
+					2.  Commit the changes in First Spirit.
+					3.  Upload them to the sandbox via the First Spirit tool.
+					4.  Verify that they appear correctly in the storefront.
+				</steps>
+			</usecase>
+		</usecases>
+	</certificationInfo>
+</certification>
