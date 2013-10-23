@@ -1,0 +1,30 @@
+<certification>
+	<cartridgeInfo>
+		<name>INSERT_NAME</name>
+		<version>INSERT_VERSION</version>
+		<implementer>INSERT_IMPLEMENTER</implementer>
+	</cartridgeInfo>
+	<certificationInfo>
+		<certificationID>INSERT_ID</certificationID>
+		<certifiedby>
+			INSERT_NAME
+		</certifiedby>
+		<date>
+			INSERT_DATE
+		</date>
+		<platform>
+			<version>INSERT_PLATFORM_RELEASE</version>
+			<storefront>INSERT_PLATFORM_RELEASE_FOR_STOREFRONT</storefront>
+		</platform>
+		<usecases>
+			<usecase>
+				<description>
+					INSERT_USE_CASE_DESCRIPTION
+				</description>
+				<steps>
+					1.  INSERT_STEPS
+				</steps>
+			</usecase>
+		</usecases>
+	</certificationInfo>
+</certification>
