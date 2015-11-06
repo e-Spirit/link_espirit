@@ -6,41 +6,36 @@
 
 <head>
 
-	<isscript>var pageContext={title:'Customer Service', type:'customerservice',ns:'account'};</isscript>
 	<isinclude template="util/modules"/>
 	
-	<iscomment>This page must be cachable. It inherits the caching attributes by the decorated template.</iscomment>
-
 	<isinclude template="components/header/htmlhead"/>
-	<isinclude template="content/pt_customerservice_UI"/>
-	
-	<iscomment>Add template-specific header information here.</iscomment>	
-	
+	<isinclude template="content/content/pt_content_UI"/>
+
+	<iscomment>Add template-specific header information here!</iscomment>	
+		
 </head>
 
 <body>
 
-	<div id="wrapper" class="pt_customer-service">
+	<div id="wrapper" class="pt_content">
 	
 		<isinclude url="${URLUtils.url('Home-IncludeHeader')}"/>
-	
-		<div id="main" role="main" class="page-content clearfix">
-			
+		
+		<div id="main" role="main" class="page-content clearfixx">
+		
 			<!-- CMS-PREVIEW-BREADCRUMB -->
 			<iscomment>e-Spirit | placeholder for preview environment</iscomment>
-				
-			<div id="cms_content">
-				<isbreadcrumbs bcurl1="${URLUtils.url('CustomerService-Show')}" bctext1="${'Customer Service'}" bctext2="${empty(pdict.Content) ? null : pdict.Content.name}" />
-			</div> 
 			
-		
-			<div id="primary" class="primary-content">
-				<section>
-					<isinclude template="components/browsertoolscheck"/>
-					<isreplace/>
-				</section>
+			<isinclude template="components/browsertoolscheck"/>	
+			<div id="cms_content">
+				<isinclude template="components/contentbreadcrumbs"/>	
+			</div> 	
+					
+			<div id="primary" class="primary-content">	
+				<isreplace/>			
 			</div>
 			
+					
 			<div id="secondary" class="nav">
 				<nav>
 					<h1 class="visually-hidden">${Resource.msg('global.secondarynavheading','locale',null)}</h1>	
@@ -58,13 +53,13 @@
 					<iscontentasset aid="account-nav-text"/>
 				</div> 
 			</div>		
-
-		</div><!-- /main -->
-		
-		<isinclude template="components/footer/footer"/>
-		<isinclude template="content/pt_customerservice_VARS"/>
-		
-	</div><!--  /wrapper -->
+			
+		</div>
 	
+	
+		<isinclude template="components/footer/footer"/>
+		<isinclude template="content/content/pt_content_VARS"/>
+		
+	</div>
 </body>
 </html>

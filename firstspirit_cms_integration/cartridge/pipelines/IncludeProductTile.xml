@@ -46,11 +46,10 @@
                     <config-property key="Transactional" value="false"/>
                     <key-binding alias="CurrentHttpParameterMap.pname.stringValue" key="From_0"/>
                     <key-binding alias="FS_Name" key="To_0"/>
-                    <key-binding alias="null" key="From_1"/>
-                    <key-binding alias="null" key="To_1"/>
-                    <key-binding alias="null" key="From_2"/>
-                    <key-binding alias="null" key="To_2"/>
-                    <key-binding alias="null" key="From_3"/>
+                    <key-binding alias="CurrentHttpParameterMap.displaycta.stringValue" key="From_1"/>
+                    <key-binding alias="FS_DisplayCTA" key="To_1"/>
+                    <key-binding alias="CurrentHttpParameterMap.ctalabel.stringValue" key="From_2"/>
+                    <key-binding alias="FS_CTALabel" key="To_2"/>
                     <key-binding alias="null" key="To_3"/>
                     <key-binding alias="null" key="From_4"/>
                     <key-binding alias="null" key="To_4"/>
@@ -74,7 +73,7 @@
             </simple-transition>
             <node>
                 <interaction-node transaction-required="false">
-                    <template buffered="true" dynamic="false" name="content/content/productInfo"/>
+                    <template buffered="true" dynamic="false" name="content/content/include_producttile"/>
                 </interaction-node>
                 <node-display x="0" y="1"/>
             </node>

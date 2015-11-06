@@ -1,0 +1,12 @@
+<iscache type="relative" hour="24"/>
+<iscomment>
+	e-Spirit demo template
+</iscomment>
+
+<isif condition="${slotcontent != null}">
+	<div class="sub-banner-container">
+		<isloop items="${slotcontent.content}" var="contentAsset">
+			<isprint value="${contentAsset.custom.body}" encoding="off"/>
+		</isloop>
+	</div>
+</isif>

@@ -25,40 +25,7 @@
 		<isinclude url="${URLUtils.url('Home-IncludeHeader')}"/>
 	
 		<div id="main" role="main" class="page-content clearfix">
-			
-			<!-- CMS-PREVIEW-BREADCRUMB -->
-			<iscomment>e-Spirit | placeholder for preview environment</iscomment>
-				
-			<div id="cms_content">
-				<isbreadcrumbs bcurl1="${URLUtils.url('CustomerService-Show')}" bctext1="${'Customer Service'}" bctext2="${empty(pdict.Content) ? null : pdict.Content.name}" />
-			</div> 
-			
-		
-			<div id="primary" class="primary-content">
-				<section>
-					<isinclude template="components/browsertoolscheck"/>
-					<isreplace/>
-				</section>
-			</div>
-			
-			<div id="secondary" class="nav">
-				<nav>
-					<h1 class="visually-hidden">${Resource.msg('global.secondarynavheading','locale',null)}</h1>	
-					<div class="secondary-navigation">
-					
-						<!-- CMS-PREVIEW-SUBNAVIGATION --> 
-						<iscomment>e-Spirit | placeholder for preview environment</iscomment>
-						
-							<div id="cms_content">
-								<isinclude url="${URLUtils.url('CustomerService-LeftNav')}"/>
-							</div>
-					</div>
-				</nav>
-				<div class="account-nav-asset">
-					<iscontentasset aid="account-nav-text"/>
-				</div> 
-			</div>		
-
+			<isprint value="${pdict.Content.custom.body}" encoding = "off"/>
 		</div><!-- /main -->
 		
 		<isinclude template="components/footer/footer"/>

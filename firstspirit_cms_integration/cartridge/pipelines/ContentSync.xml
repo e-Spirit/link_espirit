@@ -2,100 +2,383 @@
 <?demandware-pipeline version="2.0"?>
 
 <pipeline type="view">
-  <branch basename="MERGE">
-    <segment>
-      <node>
-        <start-node call-mode="private" name="MERGE" secure="false"/>
-        <node-display x="1" y="0"/>
-      </node>
-      <simple-transition>
-        <transition-display>
-          <bend-point relative-to="source" x="0" y="1"/>
-        </transition-display>
-      </simple-transition>
-      <node>
-        <pipelet-node pipelet-name="ImportContent" pipelet-set-identifier="bc_api">
-          <key-binding alias="CurrentJobParameterMap.import_file" key="ImportFile"/>
-          <key-binding alias="&quot;MERGE&quot;" key="ImportMode"/>
-          <key-binding alias="dw.content.ContentMgr.getSiteLibrary()" key="Library"/>
-          <key-binding alias="null" key="ErrorCode"/>
-          <key-binding alias="null" key="ErrorMsg"/>
-          <key-binding alias="null" key="LogFileName"/>
-          <key-binding alias="null" key="Status"/>
-        </pipelet-node>
-        <node-display x="0" y="1"/>
-        <branch basename="b2" source-connector="error">
-          <transition target-connector="in">
-            <transition-display>
-              <bend-point relative-to="source" x="2" y="0"/>
-              <bend-point relative-to="target" x="0" y="-1"/>
-            </transition-display>
-          </transition>
-          <segment>
+    <branch basename="LIBRARY_UPDATE">
+        <segment>
             <node>
-              <stop-node/>
-              <node-display x="1" y="1"/>
+                <start-node call-mode="private" name="LIBRARY_UPDATE" secure="false"/>
+                <node-display x="0" y="0"/>
             </node>
-          </segment>
-        </branch>
-      </node>
-      <simple-transition>
-        <transition-display>
-          <bend-point relative-to="source" x="0" y="1"/>
-        </transition-display>
-      </simple-transition>
-      <node>
-        <end-node/>
-        <node-display x="0" y="1"/>
-      </node>
-    </segment>
-  </branch>
-  <branch basename="DELETE">
-    <segment>
-      <node>
-        <start-node call-mode="private" name="DELETE" secure="false"/>
-        <node-display x="3" y="0"/>
-      </node>
-      <simple-transition>
-        <transition-display>
-          <bend-point relative-to="source" x="0" y="1"/>
-        </transition-display>
-      </simple-transition>
-      <node>
-        <pipelet-node pipelet-name="ImportContent" pipelet-set-identifier="bc_api">
-          <key-binding alias="CurrentJobParameterMap.import_file" key="ImportFile"/>
-          <key-binding alias="&quot;DELETE&quot;" key="ImportMode"/>
-          <key-binding alias="dw.content.ContentMgr.getSiteLibrary()" key="Library"/>
-          <key-binding alias="null" key="ErrorCode"/>
-          <key-binding alias="null" key="ErrorMsg"/>
-          <key-binding alias="null" key="LogFileName"/>
-          <key-binding alias="null" key="Status"/>
-        </pipelet-node>
-        <node-display x="0" y="1"/>
-        <branch basename="b2" source-connector="error">
-          <transition target-connector="in">
-            <transition-display>
-              <bend-point relative-to="source" x="2" y="0"/>
-              <bend-point relative-to="target" x="0" y="-1"/>
-            </transition-display>
-          </transition>
-          <segment>
+            <simple-transition>
+                <transition-display>
+                    <bend-point relative-to="source" x="0" y="1"/>
+                </transition-display>
+            </simple-transition>
             <node>
-              <stop-node/>
-              <node-display x="1" y="1"/>
+                <pipelet-node pipelet-name="ImportContent" pipelet-set-identifier="bc_api">
+                    <key-binding alias="CurrentJobParameterMap.import_file" key="ImportFile"/>
+                    <key-binding alias="&quot;UPDATE&quot;" key="ImportMode"/>
+                    <key-binding alias="dw.content.ContentMgr.getSiteLibrary()" key="Library"/>
+                    <key-binding alias="null" key="ErrorCode"/>
+                    <key-binding alias="null" key="ErrorMsg"/>
+                    <key-binding alias="null" key="LogFileName"/>
+                    <key-binding alias="null" key="Status"/>
+                </pipelet-node>
+                <node-display x="0" y="1"/>
+                <branch basename="b2" source-connector="error">
+                    <transition target-connector="in">
+                        <transition-display>
+                            <bend-point relative-to="source" x="2" y="0"/>
+                            <bend-point relative-to="target" x="0" y="-1"/>
+                        </transition-display>
+                    </transition>
+                    <segment>
+                        <node>
+                            <stop-node/>
+                            <node-display x="1" y="1"/>
+                        </node>
+                    </segment>
+                </branch>
             </node>
-          </segment>
-        </branch>
-      </node>
-      <simple-transition>
-        <transition-display>
-          <bend-point relative-to="source" x="0" y="1"/>
-        </transition-display>
-      </simple-transition>
-      <node>
-        <end-node/>
-        <node-display x="0" y="1"/>
-      </node>
-    </segment>
-  </branch>
+            <simple-transition>
+                <transition-display>
+                    <bend-point relative-to="source" x="0" y="1"/>
+                </transition-display>
+            </simple-transition>
+            <node>
+                <end-node/>
+                <node-display x="0" y="1"/>
+            </node>
+        </segment>
+    </branch>
+    <branch basename="LIBRARY_DELETE">
+        <segment>
+            <node>
+                <start-node call-mode="private" name="LIBRARY_DELETE" secure="false"/>
+                <node-display x="2" y="0"/>
+            </node>
+            <simple-transition>
+                <transition-display>
+                    <bend-point relative-to="source" x="0" y="1"/>
+                </transition-display>
+            </simple-transition>
+            <node>
+                <pipelet-node pipelet-name="ImportContent" pipelet-set-identifier="bc_api">
+                    <key-binding alias="CurrentJobParameterMap.import_file" key="ImportFile"/>
+                    <key-binding alias="&quot;DELETE&quot;" key="ImportMode"/>
+                    <key-binding alias="dw.content.ContentMgr.getSiteLibrary()" key="Library"/>
+                    <key-binding alias="null" key="ErrorCode"/>
+                    <key-binding alias="null" key="ErrorMsg"/>
+                    <key-binding alias="null" key="LogFileName"/>
+                    <key-binding alias="null" key="Status"/>
+                </pipelet-node>
+                <node-display x="0" y="1"/>
+                <branch basename="b2" source-connector="error">
+                    <transition target-connector="in">
+                        <transition-display>
+                            <bend-point relative-to="source" x="2" y="0"/>
+                            <bend-point relative-to="target" x="0" y="-1"/>
+                        </transition-display>
+                    </transition>
+                    <segment>
+                        <node>
+                            <stop-node/>
+                            <node-display x="1" y="1"/>
+                        </node>
+                    </segment>
+                </branch>
+            </node>
+            <simple-transition>
+                <transition-display>
+                    <bend-point relative-to="source" x="0" y="1"/>
+                </transition-display>
+            </simple-transition>
+            <node>
+                <end-node/>
+                <node-display x="0" y="1"/>
+            </node>
+        </segment>
+    </branch>
+    <branch basename="LIBRARY_MERGE">
+        <segment>
+            <node>
+                <start-node call-mode="private" name="LIBRARY_MERGE" secure="false"/>
+                <node-display x="0" y="3"/>
+            </node>
+            <simple-transition>
+                <transition-display>
+                    <bend-point relative-to="source" x="0" y="1"/>
+                </transition-display>
+            </simple-transition>
+            <node>
+                <pipelet-node pipelet-name="ImportContent" pipelet-set-identifier="bc_api">
+                    <key-binding alias="CurrentJobParameterMap.import_file" key="ImportFile"/>
+                    <key-binding alias="&quot;MERGE&quot;" key="ImportMode"/>
+                    <key-binding alias="dw.content.ContentMgr.getSiteLibrary()" key="Library"/>
+                    <key-binding alias="null" key="ErrorCode"/>
+                    <key-binding alias="null" key="ErrorMsg"/>
+                    <key-binding alias="null" key="LogFileName"/>
+                    <key-binding alias="null" key="Status"/>
+                </pipelet-node>
+                <node-display x="0" y="1"/>
+                <branch basename="b2" source-connector="error">
+                    <transition target-connector="in">
+                        <transition-display>
+                            <bend-point relative-to="source" x="2" y="0"/>
+                            <bend-point relative-to="target" x="0" y="-1"/>
+                        </transition-display>
+                    </transition>
+                    <segment>
+                        <node>
+                            <stop-node/>
+                            <node-display x="1" y="1"/>
+                        </node>
+                    </segment>
+                </branch>
+            </node>
+            <simple-transition>
+                <transition-display>
+                    <bend-point relative-to="source" x="0" y="1"/>
+                </transition-display>
+            </simple-transition>
+            <node>
+                <end-node/>
+                <node-display x="0" y="1"/>
+            </node>
+        </segment>
+    </branch>
+    <branch basename="LIBRARY_REPLACE">
+        <segment>
+            <node>
+                <start-node call-mode="private" name="LIBRARY_REPLACE" secure="false"/>
+                <node-display x="2" y="3"/>
+            </node>
+            <simple-transition>
+                <transition-display>
+                    <bend-point relative-to="source" x="0" y="1"/>
+                </transition-display>
+            </simple-transition>
+            <node>
+                <pipelet-node pipelet-name="ImportContent" pipelet-set-identifier="bc_api">
+                    <key-binding alias="CurrentJobParameterMap.import_file" key="ImportFile"/>
+                    <key-binding alias="&quot;REPLACE&quot;" key="ImportMode"/>
+                    <key-binding alias="dw.content.ContentMgr.getSiteLibrary()" key="Library"/>
+                    <key-binding alias="null" key="ErrorCode"/>
+                    <key-binding alias="null" key="ErrorMsg"/>
+                    <key-binding alias="null" key="LogFileName"/>
+                    <key-binding alias="null" key="Status"/>
+                </pipelet-node>
+                <node-display x="0" y="1"/>
+                <branch basename="b2" source-connector="error">
+                    <transition target-connector="in">
+                        <transition-display>
+                            <bend-point relative-to="source" x="2" y="0"/>
+                        </transition-display>
+                    </transition>
+                    <segment>
+                        <node>
+                            <stop-node/>
+                            <node-display x="1" y="1"/>
+                        </node>
+                    </segment>
+                </branch>
+            </node>
+            <simple-transition>
+                <transition-display>
+                    <bend-point relative-to="source" x="0" y="1"/>
+                </transition-display>
+            </simple-transition>
+            <node>
+                <end-node/>
+                <node-display x="0" y="1"/>
+            </node>
+        </segment>
+    </branch>
+    <branch basename="SLOT_UPDATE">
+        <segment>
+            <node>
+                <start-node call-mode="private" name="SLOT_UPDATE" secure="false"/>
+                <node-display x="4" y="0"/>
+            </node>
+            <simple-transition>
+                <transition-display>
+                    <bend-point relative-to="source" x="0" y="1"/>
+                </transition-display>
+            </simple-transition>
+            <node>
+                <pipelet-node pipelet-name="ImportSlots" pipelet-set-identifier="bc_api">
+                    <key-binding alias="&quot;UPDATE&quot;" key="ImportMode"/>
+                    <key-binding alias="null" key="ErrorCode"/>
+                    <key-binding alias="null" key="ErrorMsg"/>
+                    <key-binding alias="null" key="LogFileName"/>
+                    <key-binding alias="null" key="Status"/>
+                    <key-binding alias="CurrentJobParameterMap.import_file" key="ImportFile"/>
+                </pipelet-node>
+                <node-display x="0" y="1"/>
+                <branch basename="b2" source-connector="error">
+                    <transition target-connector="in">
+                        <transition-display>
+                            <bend-point relative-to="source" x="2" y="0"/>
+                            <bend-point relative-to="target" x="0" y="-1"/>
+                        </transition-display>
+                    </transition>
+                    <segment>
+                        <node>
+                            <stop-node/>
+                            <node-display x="1" y="1"/>
+                        </node>
+                    </segment>
+                </branch>
+            </node>
+            <simple-transition>
+                <transition-display>
+                    <bend-point relative-to="source" x="0" y="1"/>
+                </transition-display>
+            </simple-transition>
+            <node>
+                <end-node/>
+                <node-display x="0" y="1"/>
+            </node>
+        </segment>
+    </branch>
+    <branch basename="SLOT_DELETE">
+        <segment>
+            <node>
+                <start-node call-mode="private" name="SLOT_DELETE" secure="false"/>
+                <node-display x="6" y="0"/>
+            </node>
+            <simple-transition>
+                <transition-display>
+                    <bend-point relative-to="source" x="0" y="1"/>
+                </transition-display>
+            </simple-transition>
+            <node>
+                <pipelet-node pipelet-name="ImportSlots" pipelet-set-identifier="bc_api">
+                    <key-binding alias="&quot;DELETE&quot;" key="ImportMode"/>
+                    <key-binding alias="null" key="ErrorCode"/>
+                    <key-binding alias="null" key="ErrorMsg"/>
+                    <key-binding alias="null" key="LogFileName"/>
+                    <key-binding alias="null" key="Status"/>
+                    <key-binding alias="CurrentJobParameterMap.import_file" key="ImportFile"/>
+                </pipelet-node>
+                <node-display x="0" y="1"/>
+                <branch basename="b2" source-connector="error">
+                    <transition target-connector="in">
+                        <transition-display>
+                            <bend-point relative-to="source" x="2" y="0"/>
+                            <bend-point relative-to="target" x="0" y="-1"/>
+                        </transition-display>
+                    </transition>
+                    <segment>
+                        <node>
+                            <stop-node/>
+                            <node-display x="1" y="1"/>
+                        </node>
+                    </segment>
+                </branch>
+            </node>
+            <simple-transition>
+                <transition-display>
+                    <bend-point relative-to="source" x="0" y="1"/>
+                </transition-display>
+            </simple-transition>
+            <node>
+                <end-node/>
+                <node-display x="0" y="1"/>
+            </node>
+        </segment>
+    </branch>
+    <branch basename="SLOT_MERGE">
+        <segment>
+            <node>
+                <start-node call-mode="private" name="SLOT_MERGE" secure="false"/>
+                <node-display x="4" y="3"/>
+            </node>
+            <simple-transition>
+                <transition-display>
+                    <bend-point relative-to="source" x="0" y="1"/>
+                </transition-display>
+            </simple-transition>
+            <node>
+                <pipelet-node pipelet-name="ImportSlots" pipelet-set-identifier="bc_api">
+                    <key-binding alias="&quot;MERGE&quot;" key="ImportMode"/>
+                    <key-binding alias="null" key="ErrorCode"/>
+                    <key-binding alias="null" key="ErrorMsg"/>
+                    <key-binding alias="null" key="LogFileName"/>
+                    <key-binding alias="null" key="Status"/>
+                    <key-binding alias="CurrentJobParameterMap.import_file" key="ImportFile"/>
+                </pipelet-node>
+                <node-display x="0" y="1"/>
+                <branch basename="b2" source-connector="error">
+                    <transition target-connector="in">
+                        <transition-display>
+                            <bend-point relative-to="source" x="2" y="0"/>
+                            <bend-point relative-to="target" x="0" y="-1"/>
+                        </transition-display>
+                    </transition>
+                    <segment>
+                        <node>
+                            <stop-node/>
+                            <node-display x="1" y="1"/>
+                        </node>
+                    </segment>
+                </branch>
+            </node>
+            <simple-transition>
+                <transition-display>
+                    <bend-point relative-to="source" x="0" y="1"/>
+                </transition-display>
+            </simple-transition>
+            <node>
+                <end-node/>
+                <node-display x="0" y="1"/>
+            </node>
+        </segment>
+    </branch>
+    <branch basename="SLOT_REPLACE">
+        <segment>
+            <node>
+                <start-node call-mode="private" name="SLOT_REPLACE" secure="false"/>
+                <node-display x="6" y="3"/>
+            </node>
+            <simple-transition>
+                <transition-display>
+                    <bend-point relative-to="source" x="0" y="1"/>
+                </transition-display>
+            </simple-transition>
+            <node>
+                <pipelet-node pipelet-name="ImportSlots" pipelet-set-identifier="bc_api">
+                    <key-binding alias="&quot;REPLACE&quot;" key="ImportMode"/>
+                    <key-binding alias="null" key="ErrorCode"/>
+                    <key-binding alias="null" key="ErrorMsg"/>
+                    <key-binding alias="null" key="LogFileName"/>
+                    <key-binding alias="null" key="Status"/>
+                    <key-binding alias="CurrentJobParameterMap.import_file" key="ImportFile"/>
+                </pipelet-node>
+                <node-display x="0" y="1"/>
+                <branch basename="b2" source-connector="error">
+                    <transition target-connector="in">
+                        <transition-display>
+                            <bend-point relative-to="source" x="2" y="0"/>
+                            <bend-point relative-to="target" x="0" y="-1"/>
+                        </transition-display>
+                    </transition>
+                    <segment>
+                        <node>
+                            <stop-node/>
+                            <node-display x="1" y="1"/>
+                        </node>
+                    </segment>
+                </branch>
+            </node>
+            <simple-transition>
+                <transition-display>
+                    <bend-point relative-to="source" x="0" y="1"/>
+                </transition-display>
+            </simple-transition>
+            <node>
+                <end-node/>
+                <node-display x="0" y="1"/>
+            </node>
+        </segment>
+    </branch>
 </pipeline>
