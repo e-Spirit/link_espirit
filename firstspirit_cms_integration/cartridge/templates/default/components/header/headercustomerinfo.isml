@@ -5,7 +5,7 @@
 	<isscript>
 	  var currentLocale : String = pdict.CurrentRequest.getLocale();
 	</isscript>
-	<li id="cms_content">
+	<li id="cms_content" style="white-space: nowrap;">
 		Language:
 		<a href="${URLUtils.http(new dw.web.URLAction('Home-Show',dw.system.Site.getCurrent().getID(),'default'))}" title="">
 			EN
@@ -17,7 +17,7 @@
 	</li> 	
 
  	<iscomment>
- 		User has sessoin, but not currently active (welcome back)
+ 		User has session, but not currently active (welcome back)
 		--------------------------------------------------------
  	</iscomment>
  	
@@ -80,15 +80,14 @@
 
 	 		<li>
 	 			${Resource.msg('headercustomerinfo.welcome','components',null)}
-			     <a title="${Resource.msg('global.login','locale',null)}" href="${URLUtils.https('Account-Show')}" class="user-login">
-			     	${Resource.msg('global.login','locale',null)}
-			     </a>
 	 		</li>
 	 		
+	 		<li>
+	 			<a title="${Resource.msg('global.login','locale',null)}" href="${URLUtils.https('Account-Show')}" class="user-login">${Resource.msg('global.login','locale',null)}</a>
+	 		</li>
+
 	 		<li class="last">
-			     <a title="${Resource.msg('global.register','locale',null)}" href="${URLUtils.https('Account-StartRegister')}" class="user-register">
-			     	${Resource.msg('global.register','locale',null)}
-			     </a>
+			     <a title="${Resource.msg('global.register','locale',null)}" href="${URLUtils.https('Account-StartRegister')}" class="user-register">${Resource.msg('global.register','locale',null)}</a>
 	 		</li>
 	
 	 </isif>
