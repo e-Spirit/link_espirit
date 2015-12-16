@@ -2,6 +2,7 @@
 <?demandware-pipeline version="2.0"?>
 
 <pipeline type="view">
+    <description>The ContentSync Pipeline uses standard Demandware import pipelets to import Content Assets and Slot Configurations via schedule jobs into the assigned Demandware library / site.</description>
     <branch basename="LIBRARY_UPDATE">
         <segment>
             <node>

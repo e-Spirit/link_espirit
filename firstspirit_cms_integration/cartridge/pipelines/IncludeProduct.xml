@@ -2,6 +2,7 @@
 <?demandware-pipeline version="2.0"?>
 
 <pipeline group="Content" type="view">
+    <description>Demo Pipeline: The IncludeProduct pipeline takes the product ID and optional name parameter and assigns them to the &#8220;productInfo&#8221; template which is used to render the product information.</description>
     <branch basename="Start">
         <segment>
             <node>

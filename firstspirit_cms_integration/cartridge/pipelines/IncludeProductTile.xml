@@ -2,6 +2,7 @@
 <?demandware-pipeline version="2.0"?>
 
 <pipeline group="Content" type="view">
+    <description>Demo Pipeline: The IncludeProductTile pipeline takes the product ID and assigns it to the &#8220;include_producttile&#8221; template which is used to render a single product tile in hot-spot scenario.</description>
     <branch basename="Start">
         <segment>
             <node>
