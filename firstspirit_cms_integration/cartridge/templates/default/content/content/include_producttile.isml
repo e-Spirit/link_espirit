@@ -2,7 +2,7 @@
 
 <link type="text/css" href="/on/demandware.static/Sites-Site/-/-/jscript/ext/resources/css/ext-all.css" rel="stylesheet"></link>
 <link type="text/css" href="/on/demandware.static/Sites-Site/-/-/internal/css/dwux-15.2.css" rel="stylesheet"></link>
-<link href="/on/demandware.static/Sites-VM_MASTER-Site/-/default/v1425573045148/images/favicon.ico" rel="shortcut icon" />
+<link href="/on/demandware.static/Sites-Site/-/default/images/favicon.ico" rel="shortcut icon" />
 
 
 <isif condition="${pdict.FS_DisplayCTA.equals("true")}">
