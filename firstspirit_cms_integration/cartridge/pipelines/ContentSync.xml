@@ -34,7 +34,7 @@
                     </transition>
                     <segment>
                         <node>
-                            <stop-node/>
+                            <stop-node name="LIBRARY_UPDATE_ERROR"/>
                             <node-display x="1" y="1"/>
                         </node>
                     </segment>
@@ -46,7 +46,7 @@
                 </transition-display>
             </simple-transition>
             <node>
-                <end-node/>
+                <end-node name="LIBRARY_UPDATE_END"/>
                 <node-display x="0" y="1"/>
             </node>
         </segment>
@@ -82,7 +82,7 @@
                     </transition>
                     <segment>
                         <node>
-                            <stop-node/>
+                            <stop-node name="LIBRARY_DELETE_ERROR"/>
                             <node-display x="1" y="1"/>
                         </node>
                     </segment>
@@ -94,7 +94,7 @@
                 </transition-display>
             </simple-transition>
             <node>
-                <end-node/>
+                <end-node name="LIBRARY_DELETE_END"/>
                 <node-display x="0" y="1"/>
             </node>
         </segment>
@@ -130,7 +130,7 @@
                     </transition>
                     <segment>
                         <node>
-                            <stop-node/>
+                            <stop-node name="LIBRARY_MERGE_ERROR"/>
                             <node-display x="1" y="1"/>
                         </node>
                     </segment>
@@ -142,7 +142,7 @@
                 </transition-display>
             </simple-transition>
             <node>
-                <end-node/>
+                <end-node name="LIBRARY_MERGE_END"/>
                 <node-display x="0" y="1"/>
             </node>
         </segment>
@@ -177,7 +177,7 @@
                     </transition>
                     <segment>
                         <node>
-                            <stop-node/>
+                            <stop-node name="LIBRARY_REPLACE_ERROR"/>
                             <node-display x="1" y="1"/>
                         </node>
                     </segment>
@@ -189,7 +189,7 @@
                 </transition-display>
             </simple-transition>
             <node>
-                <end-node/>
+                <end-node name="LIBRARY_REPLACE_END"/>
                 <node-display x="0" y="1"/>
             </node>
         </segment>
@@ -224,7 +224,7 @@
                     </transition>
                     <segment>
                         <node>
-                            <stop-node/>
+                            <stop-node name="SLOT_UPDATE_ERROR"/>
                             <node-display x="1" y="1"/>
                         </node>
                     </segment>
@@ -236,7 +236,7 @@
                 </transition-display>
             </simple-transition>
             <node>
-                <end-node/>
+                <end-node name="SLOT_UPDATE_END"/>
                 <node-display x="0" y="1"/>
             </node>
         </segment>
@@ -271,7 +271,7 @@
                     </transition>
                     <segment>
                         <node>
-                            <stop-node/>
+                            <stop-node name="SLOT_DELETE_ERROR"/>
                             <node-display x="1" y="1"/>
                         </node>
                     </segment>
@@ -283,7 +283,7 @@
                 </transition-display>
             </simple-transition>
             <node>
-                <end-node/>
+                <end-node name="SLOT_DELETE_END"/>
                 <node-display x="0" y="1"/>
             </node>
         </segment>
@@ -318,7 +318,7 @@
                     </transition>
                     <segment>
                         <node>
-                            <stop-node/>
+                            <stop-node name="SLOT_MERGE_ERROR"/>
                             <node-display x="1" y="1"/>
                         </node>
                     </segment>
@@ -330,7 +330,7 @@
                 </transition-display>
             </simple-transition>
             <node>
-                <end-node/>
+                <end-node name="SLOT_MERGE_END"/>
                 <node-display x="0" y="1"/>
             </node>
         </segment>
@@ -365,7 +365,7 @@
                     </transition>
                     <segment>
                         <node>
-                            <stop-node/>
+                            <stop-node name="SLOT_REPLACE_ERROR"/>
                             <node-display x="1" y="1"/>
                         </node>
                     </segment>
@@ -377,7 +377,7 @@
                 </transition-display>
             </simple-transition>
             <node>
-                <end-node/>
+                <end-node name="SLOT_REPLACE_END"/>
                 <node-display x="0" y="1"/>
             </node>
         </segment>
