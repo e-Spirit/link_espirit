@@ -1,0 +1,32 @@
+/**
+*	@input Step : String The current step, either 'Library import' or 'Slot configuration import' 
+*   @input Phase : String The current sync phase
+*   @input ValidationStatus : dw.system.Status The validation status.
+*   @input ImportStatus : dw.system.Status The validation status.
+*
+*/
+importPackage( dw.system );
+
+function execute( args : PipelineDictionary ) : Number
+{
+    var log = Logger.getLogger("ContentSync");
+    
+    if (args.Phase.equals("IMPORT_OK")) {
+    	log.info("XML file successfully imported in step [" + args.Step + "] (" + args.ImportStatus.code + ": " + args.ImportStatus.message + ")");
+    } else if (args.Phase.equals("IMPORT_ERROR")) {
+    	log.error("An error occurred during importing the XML file in step [" + args.Step + "] (" + args.ImportStatus.code + ": " + args.ImportStatus.message + ")");
+    } else if (args.Phase.equals("VALIDATION_FAILED")) {
+    	log.error("Validation of XML file failed in step [" + args.Step + "] (" + args.ValidationStatus.code + ": " + args.ValidationStatus.message + ")");
+    } else if (args.Phase.equals("VALIDATION_ERROR")) {
+    	log.error("An error occurred during validating the XML file in step [" + args.Step + "] (" + args.ValidationStatus.code + ": " + args.ValidationStatus.message + ")");
+    }
+    
+    if (!args.Phase.equals("VALIDATION_ERROR")) {
+   		log.info("Validation summary for step [" + args.Step + "]: " + args.ValidationStatus.details.ValidationWarningCount + "/" + args.ValidationStatus.details.ValidationErrorCount + " Warnings/Errors");
+    }
+   	if (args.Phase.equals("IMPORT_OK")) {
+   		log.info("Import summary for step [" + args.Step + "]: " + args.ImportStatus.details.DataWarningCount + "/" + args.ImportStatus.details.DataErrorCount + " Warnings/Errors");
+   	}  
+
+	return PIPELET_NEXT;
+}
