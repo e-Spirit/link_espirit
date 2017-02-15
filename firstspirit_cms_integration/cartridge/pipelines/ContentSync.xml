@@ -32,8 +32,8 @@
                 <config-property key="OnError" value="PIPELET_ERROR"/>
                 <config-property key="ScriptFile" value="ContentSyncLogging.ds"/>
                 <key-binding alias="null" key="ScriptLog"/>
-                <key-binding alias="&quot;VALIDATION_ERROR&quot;" key="Phase"/>
-                <key-binding alias="&quot;ImportLibrary&quot;" key="Step"/>
+                <key-binding alias="&quot;VALIDATION_ERROR&quot;" key="ContentSyncStatus"/>
+                <key-binding alias="JobStepExecution" key="JobStepExecution"/>
                 <key-binding alias="ValidationStatus" key="ValidationStatus"/>
               </pipelet-node>
               <node-display orientation="horizontal" x="1" y="0"/>
@@ -76,9 +76,9 @@
                       <config-property key="OnError" value="PIPELET_ERROR"/>
                       <config-property key="ScriptFile" value="ContentSyncLogging.ds"/>
                       <key-binding alias="null" key="ScriptLog"/>
-                      <key-binding alias="&quot;ImportLibrary&quot;" key="Step"/>
-                      <key-binding alias="&quot;IMPORT_ERROR&quot;" key="Phase"/>
+                      <key-binding alias="&quot;IMPORT_ERROR&quot;" key="ContentSyncStatus"/>
                       <key-binding alias="ImportStatus" key="ImportStatus"/>
+                      <key-binding alias="JobStepExecution" key="JobStepExecution"/>
                       <key-binding alias="ValidationStatus" key="ValidationStatus"/>
                     </pipelet-node>
                     <node-display orientation="horizontal" x="1" y="0"/>
@@ -98,13 +98,10 @@
                 <config-property key="OnError" value="PIPELET_ERROR"/>
                 <config-property key="ScriptFile" value="ContentSyncLogging.ds"/>
                 <key-binding alias="null" key="ScriptLog"/>
-                <key-binding alias="ValidationStatus" key="Status"/>
-                <key-binding alias="&quot;ImportLibrary&quot;" key="Step"/>
-                <key-binding alias="&quot;IMPORT_OK&quot;" key="Phase"/>
-                <key-binding alias="ValidationStatus" key="ValidationStatus"/>
+                <key-binding alias="&quot;IMPORT_OK&quot;" key="ContentSyncStatus"/>
                 <key-binding alias="ImportStatus" key="ImportStatus"/>
-                <key-binding alias="ImportLog" key="ImportLog"/>
-                <key-binding alias="ValidationLog" key="ValidationLog"/>
+                <key-binding alias="JobStepExecution" key="JobStepExecution"/>
+                <key-binding alias="ValidationStatus" key="ValidationStatus"/>
               </pipelet-node>
               <node-display x="0" y="1"/>
             </node>
@@ -123,8 +120,8 @@
           <config-property key="OnError" value="PIPELET_ERROR"/>
           <config-property key="ScriptFile" value="ContentSyncLogging.ds"/>
           <key-binding alias="null" key="ScriptLog"/>
-          <key-binding alias="&quot;ImportLibrary&quot;" key="Step"/>
-          <key-binding alias="&quot;VALIDATION_FAILED&quot;" key="Phase"/>
+          <key-binding alias="&quot;VALIDATION_FAILED&quot;" key="ContentSyncStatus"/>
+          <key-binding alias="JobStepExecution" key="JobStepExecution"/>
           <key-binding alias="ValidationStatus" key="ValidationStatus"/>
         </pipelet-node>
         <node-display orientation="horizontal" x="1" y="0"/>
@@ -166,9 +163,9 @@
                 <config-property key="OnError" value="PIPELET_ERROR"/>
                 <config-property key="ScriptFile" value="ContentSyncLogging.ds"/>
                 <key-binding alias="null" key="ScriptLog"/>
-                <key-binding alias="&quot;ImportSlotConfigurations&quot;" key="Step"/>
                 <key-binding alias="ValidationStatus" key="ValidationStatus"/>
-                <key-binding alias="&quot;VALIDATION_ERROR&quot;" key="Phase"/>
+                <key-binding alias="JobStepExecution" key="JobStepExecution"/>
+                <key-binding alias="&quot;VALIDATION_ERROR&quot;" key="ContentSyncStatus"/>
               </pipelet-node>
               <node-display orientation="horizontal" x="1" y="0"/>
             </node>
@@ -214,10 +211,10 @@
                       <config-property key="OnError" value="PIPELET_ERROR"/>
                       <config-property key="ScriptFile" value="ContentSyncLogging.ds"/>
                       <key-binding alias="null" key="ScriptLog"/>
+                      <key-binding alias="&quot;IMPORT_ERROR&quot;" key="ContentSyncStatus"/>
                       <key-binding alias="ImportStatus" key="ImportStatus"/>
+                      <key-binding alias="JobStepExecution" key="JobStepExecution"/>
                       <key-binding alias="ValidationStatus" key="ValidationStatus"/>
-                      <key-binding alias="&quot;ImportSlotConfigurations&quot;" key="Step"/>
-                      <key-binding alias="&quot;IMPORT_ERROR&quot;" key="Phase"/>
                     </pipelet-node>
                     <node-display orientation="horizontal" x="1" y="0"/>
                   </node>
@@ -236,9 +233,9 @@
                 <config-property key="OnError" value="PIPELET_ERROR"/>
                 <config-property key="ScriptFile" value="ContentSyncLogging.ds"/>
                 <key-binding alias="null" key="ScriptLog"/>
+                <key-binding alias="&quot;IMPORT_OK&quot;" key="ContentSyncStatus"/>
                 <key-binding alias="ImportStatus" key="ImportStatus"/>
-                <key-binding alias="&quot;IMPORT_OK&quot;" key="Phase"/>
-                <key-binding alias="&quot;ImportSlotConfigurations&quot;" key="Step"/>
+                <key-binding alias="JobStepExecution" key="JobStepExecution"/>
                 <key-binding alias="ValidationStatus" key="ValidationStatus"/>
               </pipelet-node>
               <node-display x="0" y="1"/>
@@ -259,8 +256,8 @@
           <config-property key="ScriptFile" value="ContentSyncLogging.ds"/>
           <key-binding alias="null" key="ScriptLog"/>
           <key-binding alias="ValidationStatus" key="ValidationStatus"/>
-          <key-binding alias="&quot;ImportSlotConfigurations&quot;" key="Step"/>
-          <key-binding alias="&quot;VALIDATION_FAILED&quot;" key="Phase"/>
+          <key-binding alias="JobStepExecution" key="JobStepExecution"/>
+          <key-binding alias="&quot;VALIDATION_FAILED&quot;" key="ContentSyncStatus"/>
         </pipelet-node>
         <node-display orientation="horizontal" x="1" y="0"/>
       </node>
