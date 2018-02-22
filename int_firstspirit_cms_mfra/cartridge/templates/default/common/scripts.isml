@@ -1,0 +1,6 @@
+<script type="text/javascript" src="${URLUtils.staticURL('/js/main.js')}"></script>
+<!-- CMS-WILL-IGNORE-FOR-PREVIEW-START -->
+<isloop items="${ require('*/cartridge/scripts/assets.js').scripts }" var="script">
+    <script type="text/javascript" src="${script}"></script>
+</isloop>
+<!-- CMS-WILL-IGNORE-FOR-PREVIEW-END -->
