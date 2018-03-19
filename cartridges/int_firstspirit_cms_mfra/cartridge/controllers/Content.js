@@ -17,14 +17,16 @@ server.post('Render', function (req, res) {
         var requestBody = req.body;
         if (requestBody) {
             res.print(velocityRendering.render(requestBody));
-            return;
+            return this.done(req, res);
         }
     } catch (e) {
-        logger.error('Rendering failed:' + e);
+        logger.error('Rendering failed: ' + e);
         logger.error(e.stack);
         res.setStatusCode(500);
         res.print('The request could not be processed. See log for details.');
     }
+
+    next();
 });
 
 module.exports = server.exports();

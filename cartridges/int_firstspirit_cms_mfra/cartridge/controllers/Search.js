@@ -20,7 +20,7 @@ server.prepend('Show', function (req, res, next) {
 
     if (velocityCategoryPageContent) {
         res.print(velocityCategoryPageContent);
-        return;
+        return this.done(req, res);
     }
 
     next();
