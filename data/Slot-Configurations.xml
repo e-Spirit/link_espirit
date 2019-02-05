@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+    <slot-configuration slot-id="login-page-banner" context="global" configuration-id="login-page-banner" assigned-to-site="true">
+        <description>Default Login Banner</description>
+        <template>slots/content/htmlSlotContainer.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">&lt;div class="hero slant-down login-banner"&gt;
+        &lt;h1 class="page-title"&gt;Login&lt;/h1&gt;
+    &lt;/div&gt;</body>
+            </html>
+        </content>
+    </slot-configuration>
+</slot-configurations>

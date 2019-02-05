@@ -1,17 +1,15 @@
 'use strict';
 
+var ContentAsset = require('./ContentAsset');
 
-function ContentAsset(catId) {
-    this.catId = catId;
-
-    this.custom = {
-        body: catId + '_body'
-    };
-}
-
-module.exports.getContent = function (catId) {
-    if (catId === 'fs-categorydetail-mens') {
-        return new ContentAsset(catId);
+module.exports.getContent = function (caId) {
+    if (caId === 'fs-categorydetail-mens') {
+        return new ContentAsset(caId);
+    } else if (caId === 'fs-productdetail-61235') {
+        return new ContentAsset(caId);
+    } else if (caId === 'fs-productdetail-61237') {
+        return new ContentAsset(caId);
     }
+
     return null;
 };

@@ -4,7 +4,7 @@
   "description": "e-Spirit cartridge to integrate FirstSpirit with the Salesforce Commerce Cloud",
   "license": "UNLICENSED",
   "scripts": {
-    "test": "sgmf-scripts --test test/**/*.js",
+    "test": "sgmf-scripts --test src/main/test/**/*.js",
     "lint": "sgmf-scripts --lint css && sgmf-scripts --lint js"
   },
   "author": "e-Spirit AG",

@@ -1,0 +1,12 @@
+<iscomment>
+    When including widgets within the product detail velocity template all necessary context variables
+    which the ISML template might need are missing because the widget rendering is a remote call.
+    For that reason we're wrapping all product templates with this wrapper in order to provide
+    the context variables.
+</iscomment>
+<isset name="product" value="${pdict.product}" scope="page" />
+<isset name="isQuickView" value="${false}" scope="page" />
+<isset name="isProductSet" value="${pdict.product.productType === 'set'}" scope="page" />
+<isobject object="${product.raw}" view="detail" />
+    <isinclude template="${pdict.productTemplate}" />
+</isobject>

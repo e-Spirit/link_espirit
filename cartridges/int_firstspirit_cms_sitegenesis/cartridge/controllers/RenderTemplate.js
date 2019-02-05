@@ -1,3 +1,5 @@
+/* globals request:false, response:false */
+
 'use strict';
 
 /**
