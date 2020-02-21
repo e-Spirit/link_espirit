@@ -2,9 +2,9 @@
 
 var expect = require('chai').expect;
 var proxyquire = require('proxyquire').noCallThru().noPreserveCache();
-var scriptsFolderPath = '../../../../../../cartridge/int_firstspirit_cms_sfra/cartridge/scripts/com/espirit/sfcc/';
-var scriptsFolderPathCore = '../../../../../../cartridge/int_firstspirit_cms_core/cartridge/scripts/com/espirit/sfcc/';
-var testRootPath = '../../../../../';
+var scriptsFolderPath = '../../../../../../../cartridges/int_firstspirit_cms_sfra/cartridge/scripts/com/espirit/sfcc/';
+var scriptsFolderPathCore = '../../../../../../../cartridges/int_firstspirit_cms_core/cartridge/scripts/com/espirit/sfcc/';
+var testRootPath = '../../../../../../';
 
 var proxies = {
     'dw/template/Velocity': require(testRootPath + 'mocks/dw/template/Velocity'),
@@ -20,10 +20,20 @@ var velocityCategoryPage = proxyquire(scriptsFolderPath + 'VelocityCategoryPage'
 
 describe('VelocityCategoryPage', function () {
     describe('#buildParametersString', function () {
-        it('should build a parameters string from the passed http query string', function () {
+        it('should build a parameters string from the passed http query string including the leading question mark', function () {
             var httpQueryString = '?cgid=mens&ref1=Blue&ref2=Red';
             var result = velocityCategoryPage.buildParametersString(httpQueryString);
             expect(result).to.eql(",'cgid','mens','ref1','Blue','ref2','Red'", 'Unexpected rendered content');
+        });
+        it('should build a parameters string from the passed http query string without leading question mark', function () {
+            var httpQueryString = 'cgid=mens&ref1=Blue&ref2=Red';
+            var result = velocityCategoryPage.buildParametersString(httpQueryString);
+            expect(result).to.eql(",'cgid','mens','ref1','Blue','ref2','Red'", 'Unexpected rendered content');
+        });
+        it('should build a parameters string from the passed http query string with empty parameter', function () {
+            var httpQueryString = 'cgid=mens&ref1=&ref2=Red';
+            var result = velocityCategoryPage.buildParametersString(httpQueryString);
+            expect(result).to.eql(",'cgid','mens','ref1','','ref2','Red'", 'Unexpected rendered content');
         });
     });
     describe('#renderCategorySearchResults', function () {
@@ -42,6 +52,12 @@ describe('VelocityCategoryPage', function () {
         });
         it('should return false due to missing content asset', function () {
             var cgid = 'mens-unknown';
+            var querystring = '?cgid=mens-unknown&ref1=Blue&ref2=Red';
+            var result = velocityCategoryPage.getVelocityCategoryPage(cgid, querystring);
+            expect(result).to.eql(false, 'Unexpected rendered content');
+        });
+        it('should return false due to missing category id', function () {
+            var cgid;
             var querystring = '?cgid=mens-unknown&ref1=Blue&ref2=Red';
             var result = velocityCategoryPage.getVelocityCategoryPage(cgid, querystring);
             expect(result).to.eql(false, 'Unexpected rendered content');

@@ -2,9 +2,9 @@
 
 var expect = require('chai').expect;
 var proxyquire = require('proxyquire').noCallThru().noPreserveCache();
-var scriptsFolderPath = '../../../../../../cartridge/int_firstspirit_cms_sfra/cartridge/scripts/com/espirit/sfcc/';
-var scriptsFolderPathCore = '../../../../../../cartridge/int_firstspirit_cms_core/cartridge/scripts/com/espirit/sfcc/';
-var testRootPath = '../../../../../';
+var scriptsFolderPath = '../../../../../../../cartridges/int_firstspirit_cms_sfra/cartridge/scripts/com/espirit/sfcc/';
+var scriptsFolderPathCore = '../../../../../../../cartridges/int_firstspirit_cms_core/cartridge/scripts/com/espirit/sfcc/';
+var testRootPath = '../../../../../../';
 
 var proxies = {
     'dw/template/Velocity': require(testRootPath + 'mocks/dw/template/Velocity'),
@@ -36,6 +36,12 @@ describe('VelocityProductPage', function () {
         });
         it('should return false due to missing product', function () {
             var pid = '61237';
+            var querystring = '?pid=61237';
+            var result = velocityProductPage.getVelocityProductDetailPage(pid, querystring);
+            expect(result).to.eql(false, 'Unexpected rendered content');
+        });
+        it('should return false due to missing product id', function () {
+            var pid;
             var querystring = '?pid=61237';
             var result = velocityProductPage.getVelocityProductDetailPage(pid, querystring);
             expect(result).to.eql(false, 'Unexpected rendered content');

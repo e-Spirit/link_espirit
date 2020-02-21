@@ -24,7 +24,7 @@ ContentSearchModel.prototype.getCount = function () {
 ContentSearchModel.prototype.search = function () { };
 
 ContentSearchModel.prototype.setContentID = function (contentId) {
-    if (contentId === 'fs-productdetail-61235') {
+    if (contentId === 'fs-productdetail-61235' || contentId === 'fs-productdetail-61237') {
         this.contentId = contentId;
     }
 };

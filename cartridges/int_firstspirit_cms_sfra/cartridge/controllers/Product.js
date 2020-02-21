@@ -55,6 +55,8 @@ server.get('WrapProductTemplate', function (req, res) {
                 addToCartUrl: showProductPageHelperResult.addToCartUrl,
                 resources: showProductPageHelperResult.resources,
                 breadcrumbs: showProductPageHelperResult.breadcrumbs,
+                canonicalUrl: showProductPageHelperResult.canonicalUrl,
+                schemaData: showProductPageHelperResult.schemaData,
                 productTemplate: productTemplate
             });
         }

@@ -6,37 +6,46 @@
 <!-- CMS-MESSAGE-START -->
 <!-- CMS-MESSAGE-END -->
 <!-- Attributes and Quantity -->
-<div class="col-md-10 col-12">
-    <isinclude template="product/components/mainAttributes" />
+<isinclude template="product/components/mainAttributes" />
 
-    <isset name="isBundle" value="${false}" scope="page" />
-    <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
-        <div data-attr="${attr.id}">
-            <isif condition="${attributeStatus.last && !isBundle && product.options.length === 0}">
-                <!-- Quantity Drop Down Menu -->
-                <div class="quantity col-sm-6">
-                    <isinclude template="product/components/quantity" />
-                </div>
-            </isif>
+<isset name="isBundle" value="${false}" scope="page" />
+<isset name="loopState" value="{count: 1}" scope="page" />
+<isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
+    <div class="row" data-attr="${attr.id}">
+        <div class="col-8">
             <isinclude template="product/components/variationAttribute" />
         </div>
-    </isloop>
+        <isif condition="${attributeStatus.last && !isBundle}">
+            <!-- Quantity Drop Down Menu -->
+            <div class="attribute quantity col-4">
+                <isinclude template="product/components/quantity" />
+            </div>
+        </isif>
+    </div>
+</isloop>
 
-    <isif condition="${!product.variationAttributes && product.options.length === 0}">
-        <div class="simple-quantity">
-            <isinclude template="product/components/quantity" />
+<isif condition="${!product.variationAttributes}">
+    <div class="row">
+        <div class="col-12">
+            <div class="simple-quantity">
+                <isinclude template="product/components/quantity" />
+            </div>
         </div>
+    </div>
+</isif>
+
+<div class="product-options">
+    <isif condition="${product.options && product.options.length > 0}">
+        <isinclude template="product/components/options" />
     </isif>
 </div>
 
-<isif condition="${product.options && product.options.length > 0}">
-    <isinclude template="product/components/options" />
-</isif>
-
 <!-- Size Chart -->
 <isif condition="${product.variationAttributes && product.sizeChartId}">
-    <div class="size-chart col-md-10 col-12">
-        <isinclude template="product/components/sizeChart" />
+    <div class="row">
+        <div class="size-chart col-12">
+            <isinclude template="product/components/sizeChart" />
+        </div>
     </div>
 </isif>
 

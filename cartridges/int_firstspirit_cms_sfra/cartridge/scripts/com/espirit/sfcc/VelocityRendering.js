@@ -5,12 +5,18 @@ var urlUtils = require('dw/web/URLUtils');
 
 var StringWriter = require('dw/io/StringWriter');
 
-var global = {
-    include: {
-        widget: velocity.remoteInclude,
-        staticURL: urlUtils.staticURL
-    }
-};
+/**
+ * Creates a global object needed for rendering
+ * @returns {global} Returns a global object
+ */
+function createGlobal() {
+    return {
+        include: {
+            widget: velocity.remoteInclude,
+            staticURL: urlUtils.staticURL
+        }
+    };
+}
 
 /**
  * Renders the given velocity content with global dependencies.
@@ -20,7 +26,7 @@ var global = {
  */
 function render(content) {
     var writer = new StringWriter();
-    velocity.render(content, global, writer);
+    velocity.render(content, createGlobal(), writer);
     return writer.toString();
 }
 
@@ -50,9 +56,9 @@ function renderProduct(content, querystring) {
         var ProductFactory = require('*/cartridge/scripts/factories/product');
 
         try {
-            var product = ProductFactory.get(querystring);
-            global.product = product;
-            return this.render(content, global);
+            var global = createGlobal();
+            global.product = ProductFactory.get(querystring);
+            return this.renderCustom(content, global);
         } catch (e) {
             // Do nothing because we can't handle this error properly
         }

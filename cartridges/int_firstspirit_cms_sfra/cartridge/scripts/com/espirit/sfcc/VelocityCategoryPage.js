@@ -10,13 +10,20 @@ var velocityRendering = require('~/cartridge/scripts/com/espirit/sfcc/VelocityRe
 var StringWriter = require('dw/io/StringWriter');
 
 var CATEGORY_DETAIL_PAGE_CA_PREFIX = 'fs-categorydetail-';
-var global = {
-    include: {
-        widget: velocity.remoteInclude,
-        staticURL: urlUtils.staticURL
-    },
-    action: 'Search-Show'
-};
+
+/**
+ * Creates a global object needed for rendering
+ * @returns {global} Returns a global object
+ */
+function createGlobal() {
+    return {
+        include: {
+            widget: velocity.remoteInclude,
+            staticURL: urlUtils.staticURL
+        },
+        action: 'Search-Show'
+    };
+}
 
 /**
 * Builds a string containing all query parameters as a parameter list.
@@ -65,6 +72,7 @@ function getVelocityCategoryPage(cgid, queryString) {
             logger.debug('Rendering search results.');
 
             // Include the rendered category search result as a velocity rendering parameter
+            var global = createGlobal();
             global.categorySearchResult = renderCategorySearchResults(queryString);
             global.querystring = queryString;
 

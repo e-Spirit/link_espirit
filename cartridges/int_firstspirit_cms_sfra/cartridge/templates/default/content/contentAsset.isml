@@ -1,18 +1,11 @@
 <isdecorate template="common/layout/page">
-    <isscript>
-        var assets = require('*/cartridge/scripts/assets.js');
-        assets.addCss('/css/content.css');
-    </isscript>
     <!-- CMS-CONTENT-BANNER-START -->
-    <div class="hero slant-down content-page-image">
-        <h1 class="page-title">${pdict.content.name}</h1>
-    </div>
     <!-- CMS-CONTENT-BANNER-END -->
-    <div class="container content-asset-container">
-        <!-- CMS-CONTENT-MAIN-START -->
-        <isprint value="${pdict.content.body}" encoding="off" />
-        <!-- CMS-CONTENT-MAIN-END -->
-    </div>
+    <!-- CMS-CONTENT-MAIN-START -->
+	    <!-- dwMarker="content" dwContentID="${pdict.content.UUID}" -->
+	    	<isprint value="${pdict.content.body}" encoding="off" />
+	    <!-- END_dwmarker -->
+    <!-- CMS-CONTENT-MAIN-END -->
     <!-- CMS-CONTENT-CC-OVERRIDE-START -->
     <!-- CMS-CONTENT-CC-OVERRIDE-END -->
 </isdecorate>

@@ -1,11 +1,13 @@
 {
   "name": "int_firstspirit_cms",
   "version": "2.0.0",
-  "description": "e-Spirit cartridge to integrate FirstSpirit with the Salesforce Commerce Cloud",
+  "description": "e-Spirit cartridges to integrate FirstSpirit with the Salesforce Commerce Cloud",
   "license": "UNLICENSED",
   "scripts": {
-    "test": "sgmf-scripts --test src/main/test/**/*.js",
-    "lint": "sgmf-scripts --lint css && sgmf-scripts --lint js"
+    "test": "sgmf-scripts --test test/unit/**/*.js",
+    "test:integration": "sgmf-scripts --integration 'test/integration/**/*.js'",
+    "lint": "sgmf-scripts --lint css && sgmf-scripts --lint js",
+    "cover": "sgmf-scripts --cover 'test/unit'"
   },
   "author": "e-Spirit AG",
   "devDependencies": {
@@ -17,7 +19,7 @@
     "mocha": "^4.0.1",
     "postcss-sass": "^0.2.0",
     "proxyquire": "^1.8.0",
-    "sgmf-scripts": "^1.1.2",
+    "sgmf-scripts": "^2.3.0",
     "sinon": "^4.1.3",
     "stylelint": "^8.3.1"
   },

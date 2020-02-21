@@ -7,13 +7,20 @@ var urlUtils = require('dw/web/URLUtils');
 var velocityRendering = require('~/cartridge/scripts/com/espirit/sfcc/VelocityRendering');
 
 var PRODUCT_DETAIL_PAGE_CA_PREFIX = 'fs-productdetail-';
-var global = {
-    include: {
-        widget: velocity.remoteInclude,
-        staticURL: urlUtils.staticURL
-    },
-    action: 'Product-Show'
-};
+
+/**
+ * Creates a global object needed for rendering
+ * @returns {global} Returns a global object
+ */
+function createGlobal() {
+    return {
+        include: {
+            widget: velocity.remoteInclude,
+            staticURL: urlUtils.staticURL
+        },
+        action: 'Product-Show'
+    };
+}
 
 /**
 * Checks whether a product detail page (content asset) exists for the given product id
@@ -40,6 +47,7 @@ function getVelocityProductDetailPage(pid, querystring, httpQueryString) {
             var product = ProductFactory.get(querystring);
 
             if (product) {
+                var global = createGlobal();
                 global.product = product;
                 global.querystring = httpQueryString;
                 logger.debug('Rendering content asset body.');

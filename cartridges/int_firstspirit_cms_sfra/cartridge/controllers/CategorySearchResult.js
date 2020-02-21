@@ -1,7 +1,6 @@
 'use strict';
 
 var server = require('server');
-var isml = require('dw/template/ISML');
 var constants = require('*/cartridge/scripts/com/espirit/sfcc/Constants');
 var search = require(constants.BASE_CARTRIDGE + '/cartridge/controllers/Search');
 
@@ -14,14 +13,16 @@ var search = require(constants.BASE_CARTRIDGE + '/cartridge/controllers/Search')
 */
 
 server.extend(search);
-server.append('Show', function (req, res) {
-    var viewData = res.getViewData();
+server.append('Show', function (req, res, next) {
+    this.on('route:BeforeComplete', function (innerReq, innerRes) {
+        var viewData = innerRes.getViewData();
 
-    // Resetting the previous rendering results
-    res.render(null, {});
-    res.setViewData({});
-
-    isml.renderTemplate('/search/searchResultsNoDecoratorNoBanner', viewData);
+        // Resetting the previous rendering results
+        innerRes.render(null, {});
+        innerRes.setViewData({});
+        innerRes.render('/search/searchResultsNoDecoratorNoBanner', viewData);
+    });
+    return next();
 });
 
 module.exports = server.exports();
