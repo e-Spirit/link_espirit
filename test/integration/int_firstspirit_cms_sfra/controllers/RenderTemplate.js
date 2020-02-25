@@ -14,28 +14,6 @@ describe('RenderTemplate-Product', function () {
         }
     };
 
-    it('should return product information', function (done) {
-        var prodId = '11736753M';
-        var urlEndPoint = config.baseUrl + '/RenderTemplate-Product';
-        myGetRequest.url = urlEndPoint + '?prod_id=' + prodId;
-
-        request(myGetRequest, function (error, response) {
-            assert.equal(response.statusCode, 200, 'Expected statusCode to be 200.');
-
-            var bodyAsJson = JSON.parse(response.body);
-
-            assert.equal(bodyAsJson.action, 'RenderTemplate-Product');
-            assert.equal(bodyAsJson.queryString, 'prod_id=' + prodId);
-            assert.equal(bodyAsJson.locale, 'en_GB');
-            assert.equal(bodyAsJson.id, prodId);
-            assert.equal(bodyAsJson.name, 'Summer Bomber Jacket');
-            assert.equal(bodyAsJson.template, 'templateForIntegrationTests');
-            assert.equal(bodyAsJson.type, 'product');
-
-            done();
-        });
-    });
-
     it('should return product information without template', function (done) {
         var prodId = '25518447M';
         var urlEndPoint = config.baseUrl + '/RenderTemplate-Product';
