@@ -27,7 +27,9 @@ function createGlobal() {
 function render(content) {
     var writer = new StringWriter();
     velocity.render(content, createGlobal(), writer);
-    return writer.toString();
+    var renderResult = writer.toString();
+    writer.close();
+    return renderResult;
 }
 
 /**
@@ -40,7 +42,9 @@ function render(content) {
 function renderCustom(content, customGlobal) {
     var writer = new StringWriter();
     velocity.render(content, customGlobal, writer);
-    return writer.toString();
+    var renderResult = writer.toString();
+    writer.close();
+    return renderResult;
 }
 
 /**

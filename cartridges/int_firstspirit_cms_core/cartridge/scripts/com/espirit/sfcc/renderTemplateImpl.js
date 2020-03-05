@@ -1,6 +1,7 @@
 'use strict';
 
 var ProductSearchModel = require('dw/catalog/ProductSearchModel');
+var ArrayList = require('dw/util/ArrayList');
 
 /**
  * Gets a result object containing the 'template' property of the product identified
@@ -15,12 +16,14 @@ function getProductTemplate(prodId) {
 
     if (prodId) {
         var productSearch = new ProductSearchModel();
-        productSearch.setProductID(prodId);
+        var productIDs = new ArrayList();
+        productIDs.add(prodId);
+        productSearch.setProductIDs(productIDs);
         productSearch.search();
-        var productSearchHits = productSearch.getProducts();
+        var productSearchHits = productSearch.getProductSearchHits();
 
         if (productSearchHits.hasNext()) {
-            var product = productSearchHits.next();
+            var product = productSearchHits.next().getProduct();
             result.id = product.getID();
             result.name = product.getName();
             result.template = product.getTemplate();

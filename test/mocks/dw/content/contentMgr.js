@@ -1,6 +1,6 @@
 'use strict';
 
-var ContentAsset = require('./ContentAsset');
+var ContentAsset = require('./contentAsset');
 
 module.exports.getContent = function (caId) {
     if (caId === 'fs-categorydetail-mens') {

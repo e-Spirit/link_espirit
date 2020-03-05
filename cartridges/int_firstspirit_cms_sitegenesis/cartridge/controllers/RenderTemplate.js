@@ -33,7 +33,7 @@ var guard = require(script('guard'));
 function supplyRenderTemplate(id, supplierFunction) {
     var result = supplierFunction(id);
     response.setContentType('application/json');
-    response.getWriter().print(JSON.stringify(result));
+    response.writer.print(JSON.stringify(result));
 }
 
 /**
@@ -42,7 +42,7 @@ function supplyRenderTemplate(id, supplierFunction) {
  */
 function getProduct() {
     var prodId = request.getHttpParameterMap().get('prod_id').getStringValue();
-    var renderTemplateImpl = require(script('com/espirit/sfcc/RenderTemplateImpl'));
+    var renderTemplateImpl = require(script('com/espirit/sfcc/renderTemplateImpl'));
     supplyRenderTemplate(prodId, renderTemplateImpl.getProductTemplate);
 }
 
@@ -52,7 +52,7 @@ function getProduct() {
  */
 function getCategory() {
     var catId = request.getHttpParameterMap().get('cat_id').getStringValue();
-    var renderTemplateImpl = require(script('com/espirit/sfcc/RenderTemplateImpl'));
+    var renderTemplateImpl = require(script('com/espirit/sfcc/renderTemplateImpl'));
     supplyRenderTemplate(catId, renderTemplateImpl.getCategoryTemplate);
 }
 

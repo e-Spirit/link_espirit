@@ -1,7 +1,7 @@
 'use strict';
 
 var server = require('server');
-var constants = require('*/cartridge/scripts/com/espirit/sfcc/Constants');
+var constants = require('*/cartridge/scripts/com/espirit/sfcc/constants');
 var search = require(constants.BASE_CARTRIDGE + '/cartridge/controllers/Search');
 
 /**

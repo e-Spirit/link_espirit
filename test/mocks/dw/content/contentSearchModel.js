@@ -1,7 +1,7 @@
 'use strict';
 
-var ContentAsset = require('./ContentAsset');
-var Iterator = require('../util/Iterator');
+var ContentAsset = require('./contentAsset');
+var Iterator = require('../util/iterator');
 
 function ContentSearchModel() { }
 

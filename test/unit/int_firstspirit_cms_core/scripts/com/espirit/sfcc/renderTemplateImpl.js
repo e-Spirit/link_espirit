@@ -6,12 +6,13 @@ var scriptsFolderPath = '../../../../../../../cartridges/int_firstspirit_cms_cor
 var testRootPath = '../../../../../../';
 
 var proxies = {
-    'dw/catalog/ProductSearchModel': require(testRootPath + 'mocks/dw/catalog/ProductSearchModel')
+    'dw/catalog/ProductSearchModel': require(testRootPath + 'mocks/dw/catalog/productSearchModel'),
+    'dw/util/ArrayList': require(testRootPath + 'mocks/dw/util/arrayList')
 };
 
-var renderTemplateImpl = proxyquire(scriptsFolderPath + 'RenderTemplateImpl', proxies);
+var renderTemplateImpl = proxyquire(scriptsFolderPath + 'renderTemplateImpl', proxies);
 
-describe('RenderTemplateImpl', function () {
+describe('renderTemplateImpl', function () {
     describe('#getProductTemplate', function () {
         it('should return product template data', function () {
             var prodId = '123';

@@ -12,13 +12,13 @@
  */
 
 var server = require('server');
-var constants = require('*/cartridge/scripts/com/espirit/sfcc/Constants');
+var constants = require('*/cartridge/scripts/com/espirit/sfcc/constants');
 var productController = require(constants.BASE_CARTRIDGE + '/cartridge/controllers/Product');
 var pageMetaData = require('*/cartridge/scripts/middleware/pageMetaData');
 
 server.extend(productController);
 server.prepend('Show', function (req, res, next) {
-    var velocityProductPage = require('*/cartridge/scripts/com/espirit/sfcc/VelocityProductPage');
+    var velocityProductPage = require('*/cartridge/scripts/com/espirit/sfcc/velocityProductPage');
     var pid = req.querystring.pid;
     var velocityProductPageContent =
         velocityProductPage
@@ -50,7 +50,7 @@ server.get('WrapProductTemplate', function (req, res) {
             res.render('error/notFound');
         } else {
             var isml = require('dw/template/ISML');
-            isml.renderTemplate('product/ProductTemplateWrapper', {
+            isml.renderTemplate('product/productTemplateWrapper', {
                 product: showProductPageHelperResult.product,
                 addToCartUrl: showProductPageHelperResult.addToCartUrl,
                 resources: showProductPageHelperResult.resources,

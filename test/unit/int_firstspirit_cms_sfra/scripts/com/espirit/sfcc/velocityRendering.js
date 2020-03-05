@@ -6,13 +6,13 @@ var scriptsFolderPath = '../../../../../../../cartridges/int_firstspirit_cms_sfr
 var testRootPath = '../../../../../../';
 
 var proxies = {
-    'dw/template/Velocity': require(testRootPath + 'mocks/dw/template/Velocity'),
-    'dw/web/URLUtils': require(testRootPath + 'mocks/dw/web/URLUtils'),
-    'dw/io/StringWriter': require(testRootPath + 'mocks/dw/io/StringWriter'),
+    'dw/template/Velocity': require(testRootPath + 'mocks/dw/template/velocity'),
+    'dw/web/URLUtils': require(testRootPath + 'mocks/dw/web/urlUtils'),
+    'dw/io/StringWriter': require(testRootPath + 'mocks/dw/io/stringWriter'),
     '*/cartridge/scripts/factories/product': require(testRootPath + 'mocks/factories/product')
 };
 
-var velocityRendering = proxyquire(scriptsFolderPath + 'VelocityRendering', proxies);
+var velocityRendering = proxyquire(scriptsFolderPath + 'velocityRendering', proxies);
 
 describe('VelocityRendering', function () {
     describe('#render', function () {

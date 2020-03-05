@@ -11,9 +11,9 @@
  */
 
 var server = require('server');
-var constants = require('*/cartridge/scripts/com/espirit/sfcc/Constants');
+var constants = require('*/cartridge/scripts/com/espirit/sfcc/constants');
 var search = require(constants.BASE_CARTRIDGE + '/cartridge/controllers/Search');
-var velocityCategoryPage = require('*/cartridge/scripts/com/espirit/sfcc/VelocityCategoryPage');
+var velocityCategoryPage = require('*/cartridge/scripts/com/espirit/sfcc/velocityCategoryPage');
 
 server.extend(search);
 server.prepend('Show', function (req, res, next) {

@@ -7,18 +7,18 @@ var scriptsFolderPathCore = '../../../../../../../cartridges/int_firstspirit_cms
 var testRootPath = '../../../../../../';
 
 var proxies = {
-    'dw/template/Velocity': require(testRootPath + 'mocks/dw/template/Velocity'),
-    'dw/web/URLUtils': require(testRootPath + 'mocks/dw/web/URLUtils'),
-    'dw/io/StringWriter': require(testRootPath + 'mocks/dw/io/StringWriter'),
-    '*/cartridge/scripts/com/espirit/sfcc/Constants': require(scriptsFolderPathCore + 'Constants'),
-    'dw/system/Logger': require(testRootPath + 'mocks/dw/system/Logger'),
-    'dw/content/ContentMgr': require(testRootPath + 'mocks/dw/content/ContentMgr'),
-    '~/cartridge/scripts/com/espirit/sfcc/VelocityRendering': require(testRootPath + 'mocks/com/espirit/sfcc/VelocityRendering')
+    'dw/template/Velocity': require(testRootPath + 'mocks/dw/template/velocity'),
+    'dw/web/URLUtils': require(testRootPath + 'mocks/dw/web/urlUtils'),
+    'dw/io/StringWriter': require(testRootPath + 'mocks/dw/io/stringWriter'),
+    '*/cartridge/scripts/com/espirit/sfcc/constants': require(scriptsFolderPathCore + 'constants'),
+    'dw/system/Logger': require(testRootPath + 'mocks/dw/system/logger'),
+    'dw/content/ContentMgr': require(testRootPath + 'mocks/dw/content/contentMgr'),
+    '~/cartridge/scripts/com/espirit/sfcc/velocityRendering': require(testRootPath + 'mocks/com/espirit/sfcc/velocityRendering')
 };
 
-var velocityCategoryPage = proxyquire(scriptsFolderPath + 'VelocityCategoryPage', proxies);
+var velocityCategoryPage = proxyquire(scriptsFolderPath + 'velocityCategoryPage', proxies);
 
-describe('VelocityCategoryPage', function () {
+describe('velocityCategoryPage', function () {
     describe('#buildParametersString', function () {
         it('should build a parameters string from the passed http query string including the leading question mark', function () {
             var httpQueryString = '?cgid=mens&ref1=Blue&ref2=Red';

@@ -43,7 +43,7 @@ function supplyRenderTemplate(id, supplierFunction, response, next) {
  */
 server.get('Product', function (req, res, next) {
     var prodId = req.querystring.prod_id;
-    var renderTemplateImpl = require(script('com/espirit/sfcc/RenderTemplateImpl'));
+    var renderTemplateImpl = require(script('com/espirit/sfcc/renderTemplateImpl'));
     supplyRenderTemplate(prodId, renderTemplateImpl.getProductTemplate, res, next);
 });
 
@@ -53,7 +53,7 @@ server.get('Product', function (req, res, next) {
  */
 server.get('Category', function (req, res, next) {
     var catId = req.querystring.cat_id;
-    var renderTemplateImpl = require(script('com/espirit/sfcc/RenderTemplateImpl'));
+    var renderTemplateImpl = require(script('com/espirit/sfcc/renderTemplateImpl'));
     supplyRenderTemplate(catId, renderTemplateImpl.getCategoryTemplate, res, next);
 });
 

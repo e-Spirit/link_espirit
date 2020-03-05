@@ -1,8 +1,8 @@
 'use strict';
 
 var server = require('server');
-var velocityRendering = require('~/cartridge/scripts/com/espirit/sfcc/VelocityRendering');
-var constants = require('*/cartridge/scripts/com/espirit/sfcc/Constants');
+var velocityRendering = require('~/cartridge/scripts/com/espirit/sfcc/velocityRendering');
+var constants = require('*/cartridge/scripts/com/espirit/sfcc/constants');
 var logger = require('dw/system/Logger').getLogger(constants.LOGFILE_PREFIX, 'com.espirit.sfcc.Content');
 
 /**

@@ -1,10 +1,10 @@
 'use strict';
 
-var constants = require('*/cartridge/scripts/com/espirit/sfcc/Constants');
-var logger = require('dw/system/Logger').getLogger(constants.LOGFILE_PREFIX, 'com.espirit.sfcc.VelocityProductPage');
+var constants = require('*/cartridge/scripts/com/espirit/sfcc/constants');
+var logger = require('dw/system/Logger').getLogger(constants.LOGFILE_PREFIX, 'com.espirit.sfcc.velocityProductPage');
 var velocity = require('dw/template/Velocity');
 var urlUtils = require('dw/web/URLUtils');
-var velocityRendering = require('~/cartridge/scripts/com/espirit/sfcc/VelocityRendering');
+var velocityRendering = require('~/cartridge/scripts/com/espirit/sfcc/velocityRendering');
 
 var PRODUCT_DETAIL_PAGE_CA_PREFIX = 'fs-productdetail-';
 

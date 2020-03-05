@@ -1,11 +1,11 @@
 'use strict';
 
-var constants = require('*/cartridge/scripts/com/espirit/sfcc/Constants');
-var logger = require('dw/system/Logger').getLogger(constants.LOGFILE_PREFIX, 'com.espirit.sfcc.VelocityCategoryPage');
+var constants = require('*/cartridge/scripts/com/espirit/sfcc/constants');
+var logger = require('dw/system/Logger').getLogger(constants.LOGFILE_PREFIX, 'com.espirit.sfcc.velocityCategoryPage');
 var velocity = require('dw/template/Velocity');
 var urlUtils = require('dw/web/URLUtils');
 var contentManager = require('dw/content/ContentMgr');
-var velocityRendering = require('~/cartridge/scripts/com/espirit/sfcc/VelocityRendering');
+var velocityRendering = require('~/cartridge/scripts/com/espirit/sfcc/velocityRendering');
 
 var StringWriter = require('dw/io/StringWriter');
 
@@ -51,7 +51,9 @@ function renderCategorySearchResults(queryString) {
     var writer = new StringWriter();
     var parametersString = buildParametersString(queryString);
     velocity.render("$include.widget('CategorySearchResult-Show'" + parametersString + ')', { include: { widget: velocity.remoteInclude } }, writer);
-    return writer.toString();
+    var renderResult = writer.toString();
+    writer.close();
+    return renderResult;
 }
 
 /**
