@@ -1,0 +1,28 @@
+{
+  "resource_id":"/products/*/variations",
+  "methods":["get"],
+  "read_attributes":"(**)",
+  "write_attributes":"(**)",
+  "cache_time":900
+},
+{
+  "resource_id":"/product_search/variations",
+  "methods":["get"],
+  "read_attributes":"(**)",
+  "write_attributes":"(**)",
+  "cache_time":887
+},
+{
+  "resource_id":"/products/*",
+  "methods":["get"],
+  "read_attributes":"(**)",
+  "write_attributes":"(**)",
+  "cache_time":900
+},
+{
+ "resource_id":"/content_search",
+ "methods":["get"],
+ "read_attributes":"(**)",
+ "write_attributes":"(**)",
+ "cache_time":900
+}

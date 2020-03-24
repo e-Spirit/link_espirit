@@ -1,8 +1,0 @@
-<iscomment>
-    This template is being used within the product detail velocity template. Since there is no
-    equivalent Velocity code for including slots we have to render this ISML template
-    by including it as a widget.
-</iscomment>
-<div class="recommendations">
-    <isslot id="product-recommendations-m" description="Recommended products" context="global" />
-</div>

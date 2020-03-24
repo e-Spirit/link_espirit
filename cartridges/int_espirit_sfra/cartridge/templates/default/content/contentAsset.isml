@@ -1,0 +1,11 @@
+<isdecorate template="common/layout/page">
+    <!-- CMS-CONTENT-BANNER-START -->
+    <!-- CMS-CONTENT-BANNER-END -->
+    <!-- CMS-CONTENT-MAIN-START -->
+	    <!-- dwMarker="content" dwContentID="${pdict.content.UUID}" -->
+	    	<isprint value="${pdict.content.body}" encoding="off" />
+	    <!-- END_dwmarker -->
+    <!-- CMS-CONTENT-MAIN-END -->
+    <!-- CMS-CONTENT-CC-OVERRIDE-START -->
+    <!-- CMS-CONTENT-CC-OVERRIDE-END -->
+</isdecorate>
