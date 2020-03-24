@@ -2,8 +2,8 @@
 
 var expect = require('chai').expect;
 var proxyquire = require('proxyquire').noCallThru().noPreserveCache();
-var scriptsFolderPath = '../../../../../../../cartridges/int_firstspirit_cms_sfra/cartridge/scripts/com/espirit/sfcc/';
-var scriptsFolderPathCore = '../../../../../../../cartridges/int_firstspirit_cms_core/cartridge/scripts/com/espirit/sfcc/';
+var scriptsFolderPath = '../../../../../../../cartridges/int_espirit_sfra/cartridge/scripts/com/espirit/sfcc/';
+var scriptsFolderPathCore = '../../../../../../../cartridges/int_espirit_core/cartridge/scripts/com/espirit/sfcc/';
 var testRootPath = '../../../../../../';
 
 var proxies = {
