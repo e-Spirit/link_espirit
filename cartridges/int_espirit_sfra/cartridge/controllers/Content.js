@@ -4,13 +4,14 @@ var server = require('server');
 var velocityRendering = require('~/cartridge/scripts/com/espirit/sfcc/velocityRendering');
 var constants = require('*/cartridge/scripts/com/espirit/sfcc/constants');
 var logger = require('dw/system/Logger').getLogger(constants.LOGFILE_PREFIX, 'com.espirit.sfcc.Content');
+var csrfProtection = require('*/cartridge/scripts/middleware/csrf');
 
 /**
 * This controllers renders the content of the
 * given request body using the Velocity engine.
 */
 
-server.post('Render', function (req, res, next) {
+server.post('Render', csrfProtection.generateToken, function (req, res, next) {
     try {
         logger.debug('Received request to render content.');
 
