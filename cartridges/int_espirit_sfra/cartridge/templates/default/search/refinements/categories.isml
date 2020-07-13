@@ -1,7 +1,7 @@
 <ul class="values content">
     <isloop items="${categories}" var="category">
         <li>
-            <button data-href="${category.url}" data-cgid="${category.id}">
+            <button data-href="${category.url}" data-cgid="${category.id}" data-cgid-encoded="${encodeURIComponent(category.id)}">
                 <!--- Radio button --->
                 <isif condition="${category.selected}">
                     <i class="fa fa-check-circle"></i>

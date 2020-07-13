@@ -1,5 +1,5 @@
 <div class="image-container">
-    <a href="${pdict.urls.product}" data-pid="${product.id}">
+    <a href="${pdict.urls.product}" data-pid="${product.id}" data-pid-encoded="${encodeURIComponent(product.id)}">
         <img class="tile-image"
              src="${product.images.medium[0].url}"
              alt="${product.productName}"
