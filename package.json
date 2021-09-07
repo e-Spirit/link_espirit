@@ -1,6 +1,6 @@
 {
   "name": "int_espirit",
-  "version": "20.1.0",
+  "version": "21.1.0",
   "description": "e-Spirit cartridges to integrate FirstSpirit with the Salesforce Commerce Cloud",
   "license": "UNLICENSED",
   "scripts": {

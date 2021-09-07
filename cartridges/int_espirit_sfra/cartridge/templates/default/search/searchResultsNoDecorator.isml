@@ -21,7 +21,7 @@
 <div class="container search-results">
     <!-- CMS-MESSAGE-START -->
     <!-- CMS-MESSAGE-END -->
-    
+
     <div class="row search-nav">
         <isif condition="${!pdict.productSearch.isCategorySearch}">
             <div class="nav-tabs-wrapper">
@@ -85,7 +85,6 @@
                              <div class="row product-grid" itemtype="http://schema.org/SomeProducts" itemid="#product">
                                  <isinclude template="search/productGrid" />
                              </div>
-                            </div>
                         </div>
                     </div>
                 </isif>

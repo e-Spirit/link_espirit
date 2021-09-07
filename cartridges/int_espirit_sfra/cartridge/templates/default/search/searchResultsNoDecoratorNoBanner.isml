@@ -67,7 +67,6 @@
                              <div class="row product-grid" itemtype="http://schema.org/SomeProducts" itemid="#product">
                                  <isinclude template="search/productGrid" />
                              </div>
-                            </div>
                         </div>
                     </div>
                 </isif>

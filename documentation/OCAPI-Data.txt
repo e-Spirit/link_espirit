@@ -51,4 +51,10 @@
   "methods": ["get", "put", "delete"],
   "read_attributes": "(**)",
   "write_attributes": "(**)"
+},
+{
+  "resource_id": "/sites/*/sorting_rule_search",
+  "methods": ["post"],
+  "read_attributes": "(**)",
+  "write_attributes": "(**)"
 }
